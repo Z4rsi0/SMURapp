@@ -132,8 +132,8 @@
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "À définir",
-            "preparation": "Seringue électrique - Dilution à définir",
+            "adultes": "Débuter à 1 mg/h",
+            "preparation": "Seringue électrique - 2 ampoule de 5 mg dans 40 mL de NaCl 0,9%",
             "pediatrie": [
               {
                 "minIndex": 0,
@@ -149,13 +149,13 @@
         "posologie": [
           {
             "voie": "Nébulisation",
-            "adultes": "À définir",
+            "adultes": "1 mg",
             "preparation": "Nébulisation avec masque",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "doseFixe": "0.1 à 0.5 mL/kg d'adrénaline (max 5 mL) nébulisé",
+                "mgPerKg": 0.1,
                 "note": "Dilué dans 3-5 mL de NaCl 0.9%"
               }
             ]
@@ -167,7 +167,7 @@
         "posologie": [
           {
             "voie": "IM",
-            "adultes": "À définir",
+            "adultes": "0,5 mg",
             "preparation": "IM cuisse externe",
             "pediatrie": [
               {
@@ -175,18 +175,18 @@
                 "doses": [
                   {
                     "dose": "0.15 mg (0.15 mL)",
-                    "description": "< 15 kg"
+                    "description": "< 30 kg"
                   },
                   {
                     "dose": "0.3 mg (0.3 mL)",
-                    "description": "15-30 kg"
+                    "description": "30-50 kg"
                   },
                   {
                     "dose": "0.5 mg (0.5 mL)",
-                    "description": "> 30 kg"
+                    "description": "> 50 kg"
                   }
                 ],
-                "note": "IM anaphylaxie - Répéter après 5-15 min si besoin"
+                "note": "IM anaphylaxie - Répéter après 5 min si besoin"
               }
             ]
           }

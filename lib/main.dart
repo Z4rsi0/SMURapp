@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Meloin Protocoles")),
+      appBar: AppBar(title: const Text("SMUR GHSIF : l'application")),
       body: Column(
         children: [
           Expanded(
@@ -51,10 +51,10 @@ class HomeScreen extends StatelessWidget {
             )
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Text(
               'Créé Par Alexandre AMIOT - En cours de production',
-              style: TextStyle(fontSize: 10, color: Colors.grey.shade600),
+              style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
               textAlign: TextAlign.center,
             ),
           )
