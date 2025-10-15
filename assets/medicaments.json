@@ -1,0 +1,90 @@
+[
+  {
+    "nom": "Paracétamol",
+    "nomCommercial": "Doliprane, Efferalgan",
+    "galenique": "Comprimé 500 mg / solution buvable",
+    "indications": [
+      {
+        "label": "Douleur / Fièvre",
+        "posologie": [
+          {
+            "voie": "Per os",
+            "adultes": "1 g initial, puis 500 mg-1 g selon douleur, max 3 g/j",
+            "preparation": "Prendre per os avec eau",
+            "pediatrie": [
+              {
+                "minIndex": 8,
+                "maxIndex": 999,
+                "mgPerKg": 15,
+                "maxMg": 1000,
+                "maxMgJour": 60,
+                "note": ">10kg - toutes les 6h"
+              },
+              {
+                "minIndex": 0,
+                "maxIndex": 7,
+                "mgPerKg": 7.5,
+                "maxMg": 500,
+                "maxMgJour": 30,
+                "note": "≤10kg - toutes les 6h"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "contreIndications": "Insuffisance hépatique sévère",
+    "surdosage": "Toxicité hépatique",
+    "aSavoir": "Respecter intervalle de 6h entre les prises"
+  },
+  {
+    "nom": "Adrénaline",
+    "nomCommercial": "Adrénaline Aguettant",
+    "galenique": "Ampoule 1 mg/mL (1:1000)",
+    "indications": [
+      {
+        "label": "Arrêt cardio-respiratoire",
+        "posologie": [
+          {
+            "voie": "IV",
+            "adultes": "1 mg IV toutes les 3-5 min",
+            "preparation": "Bolus IV",
+            "pediatrie": [
+              {
+                "minIndex": 0,
+                "maxIndex": 999,
+                "mgPerKg": 0.01,
+                "maxMg": 1,
+                "note": "ACR - Répéter toutes les 3-5 min"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Anaphylaxie",
+        "posologie": [
+          {
+            "voie": "IM",
+            "adultes": "0.3-0.5 mg IM",
+            "preparation": "IM cuisse externe",
+            "pediatrie": [
+              {
+                "minPoids": 30,
+                "doseFixe": "0.3 mg",
+                "note": "≥30 kg - IM cuisse externe"
+              },
+              {
+                "maxPoids": 30,
+                "doseFixe": "0.15 mg",
+                "note": "<30 kg - IM cuisse externe"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "contreIndications": "Aucune en urgence vitale",
+    "surdosage": "Arythmie, HTA sévère"
+  }
+]

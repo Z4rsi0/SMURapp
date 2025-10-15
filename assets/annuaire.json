@@ -1,0 +1,316 @@
+{
+  "interne": [
+    {
+      "nom": "Régulation SMUR",
+      "description": "Régulation médicale et dispatch",
+      "contacts": [
+        {
+          "label": "Ligne directe",
+          "numero": "01 23 45 67 89",
+          "type": "fixe"
+        },
+        {
+          "label": "Médecin régulateur",
+          "numero": "01 23 45 67 90",
+          "type": "fixe"
+        },
+        {
+          "label": "Bip régulateur",
+          "numero": "06 12 34 56 78",
+          "type": "bip"
+        }
+      ]
+    },
+    {
+      "nom": "Réanimation",
+      "description": "Unité de réanimation polyvalente",
+      "contacts": [
+        {
+          "label": "Poste infirmier",
+          "numero": "01 23 45 67 91",
+          "type": "fixe"
+        },
+        {
+          "label": "Médecin de garde",
+          "numero": "06 12 34 56 79",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Urgences Adultes",
+      "description": "Service des urgences adultes",
+      "contacts": [
+        {
+          "label": "Accueil",
+          "numero": "01 23 45 67 92",
+          "type": "fixe"
+        },
+        {
+          "label": "Salle de déchocage",
+          "numero": "01 23 45 67 93",
+          "type": "fixe"
+        },
+        {
+          "label": "Médecin senior",
+          "numero": "06 12 34 56 80",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Urgences Pédiatriques",
+      "description": "Service des urgences pédiatriques",
+      "contacts": [
+        {
+          "label": "Accueil",
+          "numero": "01 23 45 67 94",
+          "type": "fixe"
+        },
+        {
+          "label": "Pédiatre de garde",
+          "numero": "06 12 34 56 81",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Bloc Opératoire",
+      "description": "Bloc opératoire - Urgences",
+      "contacts": [
+        {
+          "label": "Standard bloc",
+          "numero": "01 23 45 67 95",
+          "type": "fixe"
+        },
+        {
+          "label": "Chirurgien de garde",
+          "numero": "06 12 34 56 82",
+          "type": "mobile"
+        },
+        {
+          "label": "Anesthésiste de garde",
+          "numero": "06 12 34 56 83",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Cardiologie",
+      "description": "Service de cardiologie interventionnelle",
+      "contacts": [
+        {
+          "label": "Poste infirmier",
+          "numero": "01 23 45 67 96",
+          "type": "fixe"
+        },
+        {
+          "label": "Cardiologue de garde",
+          "numero": "06 12 34 56 84",
+          "type": "mobile"
+        },
+        {
+          "label": "Salle de cathétérisme",
+          "numero": "01 23 45 67 97",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Radiologie",
+      "description": "Imagerie médicale - Scanner/IRM",
+      "contacts": [
+        {
+          "label": "Standard",
+          "numero": "01 23 45 67 98",
+          "type": "fixe"
+        },
+        {
+          "label": "Radiologue de garde",
+          "numero": "06 12 34 56 85",
+          "type": "mobile"
+        },
+        {
+          "label": "Scanner",
+          "numero": "01 23 45 67 99",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Biologie",
+      "description": "Laboratoire d'analyses",
+      "contacts": [
+        {
+          "label": "Standard labo",
+          "numero": "01 23 45 68 00",
+          "type": "fixe"
+        },
+        {
+          "label": "Biologiste de garde",
+          "numero": "06 12 34 56 86",
+          "type": "mobile"
+        }
+      ]
+    }
+  ],
+  "externe": [
+    {
+      "nom": "SAMU 15",
+      "description": "Centre 15 - Régulation médicale",
+      "contacts": [
+        {
+          "numero": "15",
+          "type": "fixe"
+        },
+        {
+          "label": "Ligne directe",
+          "numero": "01 45 67 89 00",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Centre Antipoison",
+      "description": "CAP - Toxicologie",
+      "contacts": [
+        {
+          "label": "Urgences toxicologiques",
+          "numero": "01 40 05 48 48",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "CESU",
+      "description": "Centre d'Enseignement des Soins d'Urgence",
+      "contacts": [
+        {
+          "label": "Standard",
+          "numero": "01 23 45 68 10",
+          "type": "fixe"
+        },
+        {
+          "label": "Responsable",
+          "numero": "06 12 34 56 90",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Pompiers",
+      "description": "SDIS - Services d'incendie",
+      "contacts": [
+        {
+          "numero": "18",
+          "type": "fixe"
+        },
+        {
+          "label": "Ligne directe CODIS",
+          "numero": "01 23 45 68 18",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Police / Gendarmerie",
+      "description": "Forces de l'ordre",
+      "contacts": [
+        {
+          "numero": "17",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Hôpital Universitaire",
+      "description": "CHU - Services spécialisés",
+      "contacts": [
+        {
+          "label": "Standard",
+          "numero": "01 23 45 68 20",
+          "type": "fixe"
+        },
+        {
+          "label": "Neurochirurgie",
+          "numero": "01 23 45 68 21",
+          "type": "fixe"
+        },
+        {
+          "label": "Grands brûlés",
+          "numero": "01 23 45 68 22",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Pédiatrie Spécialisée",
+      "description": "Hôpital pédiatrique de référence",
+      "contacts": [
+        {
+          "label": "Régulation",
+          "numero": "01 23 45 68 30",
+          "type": "fixe"
+        },
+        {
+          "label": "Réanimation pédiatrique",
+          "numero": "01 23 45 68 31",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Maternité Niveau 3",
+      "description": "Maternité avec réanimation néonatale",
+      "contacts": [
+        {
+          "label": "Salle de naissance",
+          "numero": "01 23 45 68 40",
+          "type": "fixe"
+        },
+        {
+          "label": "Réanimation néonatale",
+          "numero": "01 23 45 68 41",
+          "type": "fixe"
+        },
+        {
+          "label": "Obstétricien de garde",
+          "numero": "06 12 34 56 95",
+          "type": "mobile"
+        }
+      ]
+    },
+    {
+      "nom": "Transport Sanitaire",
+      "description": "Ambulances privées conventionnées",
+      "contacts": [
+        {
+          "label": "Ambulances Alpha",
+          "numero": "01 23 45 68 50",
+          "type": "fixe"
+        },
+        {
+          "label": "Ambulances Beta",
+          "numero": "01 23 45 68 51",
+          "type": "fixe"
+        }
+      ]
+    },
+    {
+      "nom": "Héliport",
+      "description": "SMUR héliporté / Sécurité Civile",
+      "contacts": [
+        {
+          "label": "Tour de contrôle",
+          "numero": "01 23 45 68 60",
+          "type": "fixe"
+        },
+        {
+          "label": "Coordination Dragon",
+          "numero": "01 23 45 68 61",
+          "type": "fixe"
+        }
+      ]
+    }
+  ]
+}
