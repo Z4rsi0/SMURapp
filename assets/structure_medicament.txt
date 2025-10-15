@@ -1,0 +1,66 @@
+
+/*
+================================================================================
+STRUCTURE COMPLÈTE - EXEMPLE MÉDICAMENT FICTIF
+================================================================================
+
+{
+  "nom": "Moléculine",
+  "nomCommercial": "Molécumax, Molécufine",
+  "galenique": "Ampoule 50 mg/10 mL",
+  
+  "indications": [
+    {
+      "label": "Indication principale",
+      "posologie": [
+        {
+          "voie": "IV",
+          
+          // Option A: Texte simple
+          "adultes": "2 mg/kg en bolus, puis 1 mg/kg/4h",
+          
+          // OU Option B: Tableau de doses
+          "dosesAdultes": [
+            {"condition": "< 60 kg", "dose": "100 mg"},
+            {"condition": "60-80 kg", "dose": "150 mg"},
+            {"condition": "> 80 kg", "dose": "200 mg"}
+          ],
+          
+          "preparation": "Diluer dans 50 mL NaCl 0.9%, injecter sur 5 min",
+          
+          "pediatrie": [
+            {
+              // CAS 1: Calcul avec mg/kg
+              "minIndex": 8,
+              "maxIndex": 999,
+              "mgPerKg": 2,
+              "maxMg": 100,
+              "maxMgJour": 8,
+              "note": ">10 kg - Toutes les 4h"
+            },
+            {
+              // CAS 2: Dose fixe
+              "minPoids": 20,
+              "maxPoids": 40,
+              "doseFixe": "50 mg",
+              "note": "20-40 kg"
+            },
+            {
+              // CAS 3: Tableau doses
+              "doses": [
+                {"minPoids": 10, "maxPoids": 20, "dose": "25 mg"},
+                {"minPoids": 20, "maxPoids": 35, "dose": "50 mg"}
+              ],
+              "note": "Selon poids"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  
+  "contreIndications": "IR sévère, allergie, grossesse T1",
+  "surdosage": "Nausées, confusion. Traitement symptomatique",
+  "aSavoir": "Surveillance rénale. Antidote: Molécustatine 50 mg IV"
+}
+*/
