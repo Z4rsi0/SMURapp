@@ -33,24 +33,34 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Meloin Protocoles")),
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+      body: Column(
         children: [
-          _buildNavButton(context, "Protocoles", Icons.description,
-              const ProtocolesScreen()),
-          _buildNavButton(context, "Thérapeutique",
-              Icons.medical_information, const TherapeutiqueScreen()),
-          _buildNavButton(context, "Sécurité SMUR", Icons.security,
-              const SecuriteSmurScreen()),
-          _buildNavButton(context, "Annuaire", Icons.phone,
-              const AnnuaireScreen()),
-          _buildNavButton(context, "Scores", Icons.calculate,
-              const ScoresScreen()),
-        ],
-      ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(20),
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+              children: [
+                _buildNavButton(context, "Protocoles", Icons.description, const ProtocolesScreen()),
+                _buildNavButton(context, "Thérapeutique", Icons.medical_information, const TherapeutiqueScreen()),
+                _buildNavButton(context, "Sécurité SMUR", Icons.security, const SecuriteSmurScreen()),
+                _buildNavButton(context, "Annuaire", Icons.phone, const AnnuaireScreen()),
+                _buildNavButton(context, "Scores", Icons.calculate, const ScoresScreen())
+              ],
+            )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Créé Par Alexandre AMIOT - En cours de production',
+              style: TextStyle(fontSize: 10, color: Colors.grey.shade600),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ]
+      )
+      
     );
   }
 
