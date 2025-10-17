@@ -4,6 +4,7 @@ import 'protocoles.dart';
 import 'securite_smur.dart';
 import 'annuaire.dart';
 import 'scores.dart';
+import 'pediatrie.dart';
 
 void main() {
   runApp(const MedApp());
@@ -46,7 +47,8 @@ class HomeScreen extends StatelessWidget {
                 _buildNavButton(context, "Thérapeutique", Icons.medical_information, const TherapeutiqueScreen()),
                 _buildNavButton(context, "Sécurité SMUR", Icons.security, const SecuriteSmurScreen()),
                 _buildNavButton(context, "Annuaire", Icons.phone, const AnnuaireScreen()),
-                _buildNavButton(context, "Scores", Icons.calculate, const ScoresScreen())
+                _buildNavButton(context, "Scores", Icons.calculate, const ScoresScreen()),
+                _buildNavButton(context, "Pédiatrie", Icons.child_care, const PediatrieScreen())
               ],
             )
           ),

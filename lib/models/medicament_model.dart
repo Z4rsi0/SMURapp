@@ -63,8 +63,8 @@ class Indication {
 
 class Posologie {
   final String voie;
-  final String? adultes; // Optionnel
-  final List<DoseAdulte>? dosesAdultes; // Nouveau: tableau de doses adultes
+  final String? adultes;
+  final List<DoseAdulte>? dosesAdultes;
   final String preparation;
   final List<PosologiePediatrique>? pediatrie;
 
@@ -92,7 +92,6 @@ class Posologie {
     );
   }
 
-  // Génère le texte de posologie adulte
   String getAdulteText() {
     if (adultes != null && adultes!.isNotEmpty) {
       return adultes!;
@@ -104,9 +103,8 @@ class Posologie {
   }
 }
 
-// Nouvelle classe pour doses adultes en tableau
 class DoseAdulte {
-  final String? condition; // "< 60 kg", "60-80 kg", etc.
+  final String? condition;
   final String dose;
 
   DoseAdulte({
@@ -133,13 +131,17 @@ class DoseAdulte {
 class PosologiePediatrique {
   final int? minIndex;
   final int? maxIndex;
-  final double? minPoids; // Nouveau: tranche de poids directe
-  final double? maxPoids; // Nouveau: tranche de poids directe
-  final double? mgPerKg; // Devient optionnel
-  final String? doseFixe; // Nouveau: dose fixe (ex: "0.15 mg")
-  final List<DosePediatrique>? doses; // Nouveau: tableau de doses
+  final double? minPoids;
+  final double? maxPoids;
+  final double? mgPerKg;
+  final String? doseFixe;
+  final List<DosePediatrique>? doses;
   final double? maxMg;
   final double? maxMgJour;
+  final double? ugPerKgPerMin; // µg/kg/min
+  final double? ugPerKgPerMinMax; // Max pour plage (ex: 0.1 à 0.5)
+  final double? ugPerKgPerH; // µg/kg/h
+  final double? ugPerKgPerHMax;
   final String note;
 
   PosologiePediatrique({
@@ -152,6 +154,10 @@ class PosologiePediatrique {
     this.doses,
     this.maxMg,
     this.maxMgJour,
+    this.ugPerKgPerMin,
+    this.ugPerKgPerMinMax,
+    this.ugPerKgPerH,
+    this.ugPerKgPerHMax,
     required this.note,
   });
 
@@ -170,11 +176,14 @@ class PosologiePediatrique {
           : null,
       maxMg: json['maxMg'] != null ? (json['maxMg'] as num).toDouble() : null,
       maxMgJour: json['maxMgJour'] != null ? (json['maxMgJour'] as num).toDouble() : null,
+      ugPerKgPerMin: json['ugPerKgPerMin'] != null ? (json['ugPerKgPerMin'] as num).toDouble() : null,
+      ugPerKgPerMinMax: json['ugPerKgPerMinMax'] != null ? (json['ugPerKgPerMinMax'] as num).toDouble() : null,
+      ugPerKgPerH: json['ugPerKgPerH'] != null ? (json['ugPerKgPerH'] as num).toDouble() : null,
+      ugPerKgPerHMax: json['ugPerKgPerHMax'] != null ? (json['ugPerKgPerHMax'] as num).toDouble() : null,
       note: json['note']?.toString() ?? '',
     );
   }
 
-  // Vérifie si cette posologie s'applique à l'âge donné
   bool appliqueAAge(int ageIndex) {
     if (minIndex != null && maxIndex != null) {
       return ageIndex >= minIndex! && ageIndex <= maxIndex!;
@@ -182,14 +191,12 @@ class PosologiePediatrique {
     return true;
   }
 
-  // Vérifie si cette posologie s'applique au poids donné
   bool appliqueAPoids(double poids) {
     if (minPoids != null && poids < minPoids!) return false;
     if (maxPoids != null && poids > maxPoids!) return false;
     return true;
   }
 
-  // Calcule la dose pour un poids donné
   String calculerDose(double poids) {
     String result = '';
 
@@ -199,14 +206,35 @@ class PosologiePediatrique {
     }
     // Cas 2: Tableau de doses
     else if (doses != null && doses!.isNotEmpty) {
-      result = "Doses possibles:\n";
+      result = "Doses:\n";
       for (var dose in doses!) {
-        if (dose.appliqueAPoids(poids)) {
-          result += "• ${dose.toString()}\n";
-        }
+        String line = "• ${dose.toStringWithBold(poids)}\n";
+        result += line;
       }
     }
-    // Cas 3: Calcul avec mg/kg
+    // Cas 3: µg/kg/min
+    else if (ugPerKgPerMin != null) {
+      double ugMin = ugPerKgPerMin! * poids;
+      if (ugPerKgPerMinMax != null) {
+        double ugMinMax = ugPerKgPerMinMax! * poids;
+        result = "**${ugMin.toStringAsFixed(1)} à ${ugMinMax.toStringAsFixed(1)} µg/min** "
+                 "(${ugPerKgPerMin!.toStringAsFixed(2)} à ${ugPerKgPerMinMax!.toStringAsFixed(2)} µg/kg/min)\n";
+      } else {
+        result = "**${ugMin.toStringAsFixed(1)} µg/min** (${ugPerKgPerMin!.toStringAsFixed(2)} µg/kg/min)\n";
+      }
+    }
+    // Cas 4: µg/kg/h
+    else if (ugPerKgPerH != null) {
+      double ugH = ugPerKgPerH! * poids;
+      if (ugPerKgPerHMax != null) {
+        double ugHMax = ugPerKgPerHMax! * poids;
+        result = "**${ugH.toStringAsFixed(1)} à ${ugHMax.toStringAsFixed(1)} µg/h** "
+                 "(${ugPerKgPerH!.toStringAsFixed(2)} à ${ugPerKgPerHMax!.toStringAsFixed(2)} µg/kg/h)\n";
+      } else {
+        result = "**${ugH.toStringAsFixed(1)} µg/h** (${ugPerKgPerH!.toStringAsFixed(2)} µg/kg/h)\n";
+      }
+    }
+    // Cas 5: Calcul avec mg/kg
     else if (mgPerKg != null) {
       double doseParPrise = mgPerKg! * poids;
       
@@ -218,9 +246,8 @@ class PosologiePediatrique {
       }
       
       result = "Dose: ${mgPerKg!.toStringAsFixed(2)} mg/kg\n"
-               "Soit $doseStr par prise\n";
+               "**Soit $doseStr par prise**\n";
       
-      // Max par prise
       if (maxMg != null) {
         String maxPriseStr;
         if (maxMg! < 1) {
@@ -231,7 +258,6 @@ class PosologiePediatrique {
         result += "Max par prise: $maxPriseStr\n";
       }
       
-      // Max journalier
       if (maxMgJour != null) {
         double maxParJour = maxMgJour! * poids;
         String maxJourStr;
@@ -244,12 +270,11 @@ class PosologiePediatrique {
       }
     }
     
-    result += "Note: $note";
+    result += "\nNote: $note";
     return result;
   }
 }
 
-// Nouvelle classe pour tableau de doses pédiatriques
 class DosePediatrique {
   final double? minPoids;
   final double? maxPoids;
@@ -276,6 +301,32 @@ class DosePediatrique {
     if (minPoids != null && poids < minPoids!) return false;
     if (maxPoids != null && poids > maxPoids!) return false;
     return true;
+  }
+
+  String toStringWithBold(double poids) {
+    String result = '';
+    bool isBold = appliqueAPoids(poids);
+    
+    if (minPoids != null || maxPoids != null) {
+      if (minPoids != null && maxPoids != null) {
+        result = '${minPoids!.toStringAsFixed(0)}-${maxPoids!.toStringAsFixed(0)} kg: ';
+      } else if (minPoids != null) {
+        result = '≥ ${minPoids!.toStringAsFixed(0)} kg: ';
+      } else if (maxPoids != null) {
+        result = '< ${maxPoids!.toStringAsFixed(0)} kg: ';
+      }
+    }
+    
+    if (isBold) {
+      result += '**$dose**';
+    } else {
+      result += dose;
+    }
+    
+    if (description != null) {
+      result += ' ($description)';
+    }
+    return result;
   }
 
   @override

@@ -40,7 +40,7 @@ flutter:
     - assets/annuaire.json
     - assets/scores.json
     - assets/icon/icon.png
-
+    - assets/pediatrie.json
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package
