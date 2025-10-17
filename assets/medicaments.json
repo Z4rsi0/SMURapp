@@ -1,107 +1,41 @@
 [
   {
-    "nom": "Acide tranexamique",
-    "nomCommercial": "Exacyl",
-    "galenique": "Ampoule 500 mg/5 mL",
+    "nom": "Paracétamol",
+    "nomCommercial": "Doliprane, Efferalgan",
+    "galenique": "Comprimé 500 mg / solution buvable",
     "indications": [
       {
-        "label": "Hémorragie traumatique",
+        "label": "Douleur / Fièvre",
         "posologie": [
           {
-            "voie": "IV",
-            "adultes": "1 g IV puis 1 g sur 8h",
-            "preparation": "Bolus IV lent sur 10 min, puis perfusion",
+            "voie": "Per os",
+            "adultes": "1 g initial, puis 500 mg-1 g selon douleur, max 3 g/j",
+            "preparation": "Prendre per os avec eau",
             "pediatrie": [
               {
-                "minIndex": 0,
+                "minIndex": 8,
                 "maxIndex": 999,
-                "mgPerKg": 10,
-                "note": "Bolus 10 mg/kg puis 1 mg/kg/h sur 8h"
+                "mgPerKg": 15,
+                "maxMg": 1000,
+                "maxMgJour": 60,
+                "note": ">10kg - toutes les 6h"
+              },
+              {
+                "minIndex": 0,
+                "maxIndex": 7,
+                "mgPerKg": 7.5,
+                "maxMg": 500,
+                "maxMgJour": 30,
+                "note": "≤10kg - toutes les 6h"
               }
             ]
           }
         ]
       }
     ],
-    "contreIndications": "Thrombose évolutive, CIVD",
-    "surdosage": "Risque thrombotique",
-    "aSavoir": "Administration précoce < 3h après traumatisme"
-  },
-  {
-    "nom": "Acide tranexamique",
-    "nomCommercial": "Exacyl",
-    "galenique": "Ampoule 500 mg/5 mL",
-    "indications": [
-      {
-        "label": "Hémorragie du post-partum",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "2 g IV",
-            "preparation": "Perfusion lente sur 30 min"
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Thrombose évolutive, CIVD",
-    "surdosage": "Risque thrombotique"
-  },
-  {
-    "nom": "Adénosine",
-    "nomCommercial": "Krenosin",
-    "galenique": "Ampoule 6 mg/2 mL",
-    "indications": [
-      {
-        "label": "Réduction tachycardie jonctionnelle",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "6 mg en bolus rapide",
-            "preparation": "Bolus IV rapide suivi de 20 mL NaCl 0.9%",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 0.1,
-                "maxMg": 6,
-                "note": "Bolus rapide, doubler si inefficace (max 0.3 mg/kg)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Asthme sévère, bloc AV 2-3, FA/Flutter",
-    "surdosage": "Bradycardie transitoire, flush, dyspnée",
-    "aSavoir": "Demi-vie très courte (10 sec). Voie veineuse proximale"
-  },
-  {
-    "nom": "Adénosine triphosphate",
-    "nomCommercial": "Striadyne",
-    "galenique": "Ampoule 20 mg/2 mL",
-    "indications": [
-      {
-        "label": "À définir",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "10 mg",
-            "preparation": "À définir",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 0.5,
-                "maxMg": 10,
-                "note": "À définir"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "À définir",
-    "surdosage": "À définir"
+    "contreIndications": "Insuffisance hépatique sévère",
+    "surdosage": "Toxicité hépatique",
+    "aSavoir": "Respecter intervalle de 6h entre les prises"
   },
   {
     "nom": "Adrénaline",
@@ -132,31 +66,15 @@
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "Débuter à 1 mg/h",
-            "preparation": "Seringue électrique - 2 ampoule de 5 mg dans 40 mL de NaCl 0,9%",
+            "adultes": "0.05-0.5 µg/kg/min en IVSE",
+            "preparation": "Seringue électrique - Diluer 1 amp (1mg) dans 9 mL NaCl = 100 µg/mL",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "0.1 à 1 µg/kg/min en IVSE"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "Laryngite / Stridor",
-        "posologie": [
-          {
-            "voie": "Nébulisation",
-            "adultes": "1 mg",
-            "preparation": "Nébulisation avec masque",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 0.1,
-                "note": "Dilué dans 3-5 mL de NaCl 0.9%"
+                "ugPerKgPerMin": 0.1,
+                "ugPerKgPerMinMax": 1,
+                "note": "0.1 à 1 µg/kg/min en IVSE - Titrer selon effet"
               }
             ]
           }
@@ -167,26 +85,31 @@
         "posologie": [
           {
             "voie": "IM",
-            "adultes": "0,5 mg",
-            "preparation": "IM cuisse externe",
+            "adultes": "0.3-0.5 mg IM cuisse externe",
+            "preparation": "IM cuisse externe - Répéter après 5-15 min si besoin",
             "pediatrie": [
               {
-                "minPoids": 30,
+                "minIndex": 0,
+                "maxIndex": 999,
                 "doses": [
                   {
+                    "maxPoids": 15,
                     "dose": "0.15 mg (0.15 mL)",
-                    "description": "< 30 kg"
+                    "description": "< 15 kg"
                   },
                   {
+                    "minPoids": 15,
+                    "maxPoids": 30,
                     "dose": "0.3 mg (0.3 mL)",
-                    "description": "30-50 kg"
+                    "description": "15-30 kg"
                   },
                   {
+                    "minPoids": 30,
                     "dose": "0.5 mg (0.5 mL)",
-                    "description": "> 50 kg"
+                    "description": "> 30 kg"
                   }
                 ],
-                "note": "IM anaphylaxie - Répéter après 5 min si besoin"
+                "note": "IM anaphylaxie - Répéter après 5-15 min si besoin"
               }
             ]
           }
@@ -197,204 +120,24 @@
     "surdosage": "Arythmie, HTA sévère, ischémie myocardique"
   },
   {
-    "nom": "Amiodarone",
-    "nomCommercial": "Cordarone",
-    "galenique": "Ampoule 150 mg/3 mL",
-    "indications": [
-      {
-        "label": "Arythmie ventriculaire",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "300 mg en bolus",
-            "preparation": "Diluer dans G5% minimum 100 mL",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 5,
-                "note": "5 mg/kg en bolus lent sur 20-60 min"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "ACR sur FV/TV réfractaire",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "300 mg puis 150 mg si besoin",
-            "preparation": "Bolus rapide",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 5,
-                "note": "5 mg/kg en bolus rapide en ACR"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Bradycardie, bloc AV non appareillé, dysthyroïdie",
-    "surdosage": "Bradycardie, hypotension, troubles de conduction",
-    "aSavoir": "Surveillance: ECG, PA, fonction thyroïdienne"
-  },
-  {
-    "nom": "Atropine",
-    "nomCommercial": "Atropine Lavoisier",
-    "galenique": "Ampoule 1 mg/mL",
-    "indications": [
-      {
-        "label": "Bradycardie",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "0.5 à 1 mg, répéter si besoin (max 3 mg)",
-            "preparation": "Bolus IV",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 0.02,
-                "note": "20 µg/kg (min 0.1 mg, max 0.5 mg par dose)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Glaucome angle fermé, rétention urinaire",
-    "surdosage": "Tachycardie, confusion, mydriase, sécheresse",
-    "aSavoir": "Dose minimale 0.1 mg (bradycardie paradoxale si < 0.1 mg)"
-  },
-  {
-    "nom": "Augmentin",
-    "nomCommercial": "Augmentin",
-    "galenique": "Flacon 1 g + 200 mg",
-    "indications": [
-      {
-        "label": "Fracture ouverte - Antibioprophylaxie",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "2 g IV",
-            "preparation": "Diluer et perfuser sur 30 min",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 50,
-                "maxMg": 2000,
-                "note": "50 mg/kg (max 2 g)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Allergie pénicillines",
-    "surdosage": "Troubles digestifs, éruption cutanée"
-  },
-  {
-    "nom": "Bicarbonate de sodium",
-    "nomCommercial": "Bicarbonate 4.2% ou 8.4%",
-    "galenique": "Ampoule 42 mg/mL ou 84 mg/mL",
-    "indications": [
-      {
-        "label": "Acidose métabolique",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir selon pH et réserve alcaline",
-            "preparation": "Perfusion lente",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 1,
-                "note": "1 mL/kg de bicarbonate 4.2% (ou 0.5 mL/kg de 8.4%)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Alcalose métabolique",
-    "surdosage": "Alcalose, hypokaliémie, hypernatrémie"
-  },
-  {
-    "nom": "Calcium Chlorure",
-    "nomCommercial": "Calcium Chlorure 10%",
-    "galenique": "Ampoule 1 g/10 mL",
-    "indications": [
-      {
-        "label": "Hypocalcémie / Hyperkaliémie",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "IV lente stricte (nécrose si extravasation)",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "note": "0.2 mL/kg de solution 10% (max 10 mL)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Hypercalcémie, intoxication digitalique",
-    "surdosage": "Bradycardie, arythmies",
-    "aSavoir": "Voie veineuse centrale préférable, IV stricte"
-  },
-  {
-    "nom": "Calcium Gluconate",
-    "nomCommercial": "Calcium Gluconate 10%",
-    "galenique": "Ampoule 1 g/10 mL",
-    "indications": [
-      {
-        "label": "Hypocalcémie / Hyperkaliémie",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "IV lente",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "note": "0.4 mL/kg de solution 10% (max 20 mL)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Hypercalcémie, intoxication digitalique",
-    "surdosage": "Bradycardie, arythmies"
-  },
-  {
     "nom": "Dobutamine",
     "nomCommercial": "Dobutrex",
     "galenique": "Ampoule 250 mg/20 mL",
     "indications": [
       {
-        "label": "Inotrope positif",
+        "label": "Inotrope positif - Choc cardiogénique",
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "À définir",
-            "preparation": "Seringue électrique - Dilution selon protocole",
+            "adultes": "2.5-20 µg/kg/min en IVSE - Titrer selon effet",
+            "preparation": "PSE - Diluer selon protocole (ex: 250mg dans 50mL = 5mg/mL)",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "2.5 à 20 µg/kg/min en IVSE"
+                "ugPerKgPerMin": 2.5,
+                "ugPerKgPerMinMax": 20,
+                "note": "2.5 à 20 µg/kg/min en IVSE - Débuter à 5 µg/kg/min"
               }
             ]
           }
@@ -402,219 +145,109 @@
       }
     ],
     "contreIndications": "Sténose aortique serrée, cardiomyopathie obstructive",
-    "surdosage": "Tachycardie, arythmies, HTA"
+    "surdosage": "Tachycardie, arythmies, HTA",
+    "aSavoir": "Inotrope ++ sans effet vasoconstricteur majeur"
   },
   {
-    "nom": "Glucose",
-    "nomCommercial": "G10%, G30%",
-    "galenique": "Ampoule ou poche",
+    "nom": "Noradrénaline",
+    "nomCommercial": "Levophed",
+    "galenique": "Ampoule 8 mg/4 mL (2 mg/mL)",
     "indications": [
       {
-        "label": "Hypoglycémie",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Bolus IV ou perfusion",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "note": "3 mL/kg de G10% (ou 1 mL/kg de G30%)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Hyperglycémie",
-    "surdosage": "Hyperglycémie"
-  },
-  {
-    "nom": "Hydrocortisone",
-    "nomCommercial": "Hydrocortisone Upjohn",
-    "galenique": "Flacon 100 mg",
-    "indications": [
-      {
-        "label": "Anaphylaxie / Choc",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Bolus IV ou perfusion",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 10,
-                "maxMg": 500,
-                "note": "10 mg/kg (max 500 mg)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Infections non contrôlées",
-    "surdosage": "Hyperglycémie, immunosuppression"
-  },
-  {
-    "nom": "Insuline rapide",
-    "nomCommercial": "Actrapid, Umuline Rapide",
-    "galenique": "Flacon 100 UI/mL",
-    "indications": [
-      {
-        "label": "Acidocétose diabétique",
+        "label": "Choc / Vasopresseur",
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "À définir",
-            "preparation": "IVSE - Protocole acidocétose",
+            "adultes": "0.1-2 µg/kg/min en IVSE - VVC préférable",
+            "preparation": "PSE - Voie veineuse centrale préférable (risque nécrose)",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "0.05 U/kg/h en IVSE après réhydratation"
+                "ugPerKgPerMin": 0.1,
+                "ugPerKgPerMinMax": 2,
+                "note": "0.1 à 2 µg/kg/min en IVSE - Titrer selon PAM"
               }
             ]
           }
         ]
       }
     ],
-    "contreIndications": "Hypoglycémie",
-    "surdosage": "Hypoglycémie sévère - Resucrage IV",
-    "aSavoir": "Surveillance glycémique rapprochée"
+    "contreIndications": "Aucune en choc",
+    "surdosage": "Ischémie distale, nécrose si extravasation",
+    "aSavoir": "Surveillance PA continue - Nécrose cutanée si extravasation"
   },
   {
-    "nom": "Levétirácétam",
-    "nomCommercial": "Keppra",
-    "galenique": "Flacon 500 mg/5 mL",
+    "nom": "Midazolam",
+    "nomCommercial": "Hypnovel",
+    "galenique": "Ampoule 5 mg/5 mL (1 mg/mL)",
     "indications": [
       {
-        "label": "Convulsions / État de mal épileptique",
+        "label": "Sédation / Anxiolyse",
         "posologie": [
           {
             "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Perfusion IV sur 15 min",
+            "adultes": "1-2 mg IV lente, titration par 0.5-1 mg",
+            "preparation": "Injection lente sur 2-3 min",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "40 à 60 mg/kg en dose de charge (max 3000 mg)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Aucune en urgence",
-    "surdosage": "Somnolence, agitation"
-  },
-  {
-    "nom": "Lidocaïne",
-    "nomCommercial": "Xylocaïne",
-    "galenique": "Ampoule 100 mg/5 mL (2%) ou 200 mg/10 mL",
-    "indications": [
-      {
-        "label": "Anesthésie locale / Arythmie ventriculaire en ACR",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "100 mg en bolus",
-            "preparation": "Bolus IV",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 1,
-                "note": "1 mg/kg puis 20-50 µg/kg/min en IVSE si efficace"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Allergie amides, bloc AV complet",
-    "surdosage": "Troubles neurologiques, convulsions, arythmies",
-    "aSavoir": "Dose toxique: > 3 mg/kg"
-  },
-  {
-    "nom": "Méthylprednisolone",
-    "nomCommercial": "Solu-Médrol",
-    "galenique": "Flacon 40 mg, 120 mg, 500 mg",
-    "indications": [
-      {
-        "label": "Anaphylaxie / Asthme sévère",
-        "posologie": [
-          {
-            "voie": "IV ou IM",
-            "adultes": "À définir",
-            "preparation": "Bolus IV ou IM",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 2,
-                "note": "2 mg/kg en bolus"
+                "mgPerKg": 0.1,
+                "maxMg": 5,
+                "note": "Sédation - Titration par 0.05 mg/kg"
               }
             ]
           }
         ]
       },
       {
-        "label": "Choc médullaire / Traumatisme médullaire",
+        "label": "Convulsions",
         "posologie": [
           {
             "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Perfusion selon protocole",
+            "adultes": "5-10 mg IV",
+            "preparation": "Bolus IV lent",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "30 mg/kg en bolus puis 5.4 mg/kg/h pendant 23h"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Infections non contrôlées",
-    "surdosage": "Hyperglycémie, immunosuppression",
-    "aSavoir": "Bolus dans les 8h après traumatisme médullaire"
-  },
-  {
-    "nom": "Midazolam",
-    "nomCommercial": "Hypnovel",
-    "galenique": "Ampoule 5 mg/5 mL, 1 mg/mL",
-    "indications": [
-      {
-        "label": "Convulsions (État de mal)",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Bolus IV lent, titration",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 0.4,
-                "note": "0.4 mg/kg IV ou IM"
+                "mgPerKg": 0.2,
+                "maxMg": 10,
+                "note": "0.2 mg/kg IV ou IM (max 10 mg)"
               }
             ]
           },
           {
-            "voie": "Intranasale ou buccale",
-            "adultes": "Non recommandé",
-            "preparation": "0.2-0.3 mL dans chaque narine",
+            "voie": "Intranasale",
+            "adultes": "Non recommandé adulte",
+            "preparation": "0.2-0.3 mL dans chaque narine avec seringue",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "mgPerKg": 0.1,
-                "note": "0.1 mg/kg intranasal ou buccal"
+                "mgPerKg": 0.2,
+                "maxMg": 10,
+                "note": "0.2 mg/kg intranasal (voie d'exception)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "État de mal épileptique - Relais IVSE",
+        "posologie": [
+          {
+            "voie": "IVSE",
+            "adultes": "À définir selon protocole",
+            "preparation": "PSE continu après dose de charge",
+            "pediatrie": [
+              {
+                "minIndex": 0,
+                "maxIndex": 999,
+                "ugPerKgPerH": 60,
+                "ugPerKgPerHMax": 400,
+                "note": "60 à 400 µg/kg/h en IVSE après bolus"
               }
             ]
           }
@@ -623,7 +256,55 @@
     ],
     "contreIndications": "Insuffisance respiratoire non ventilée, myasthénie",
     "surdosage": "Dépression respiratoire - Flumazénil (Anexate)",
-    "aSavoir": "Antagoniste: Flumazénil 0.25 mg IV"
+    "aSavoir": "Antagoniste: Flumazénil 0.25 mg IV - Demi-vie courte"
+  },
+  {
+    "nom": "Morphine",
+    "nomCommercial": "Morphine Lavoisier",
+    "galenique": "Ampoule 10 mg/mL",
+    "indications": [
+      {
+        "label": "Douleur sévère",
+        "posologie": [
+          {
+            "voie": "IV",
+            "adultes": "0.05-0.1 mg/kg (3-5 mg), titration toutes les 5 min",
+            "preparation": "Diluer 1 amp (10mg) dans 9 mL NaCl 0.9% = 1 mg/mL",
+            "pediatrie": [
+              {
+                "minIndex": 0,
+                "maxIndex": 999,
+                "mgPerKg": 0.1,
+                "maxMg": 10,
+                "note": "Titration toutes les 5 min par 0.025 mg/kg"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Analgésie continue",
+        "posologie": [
+          {
+            "voie": "IVSE",
+            "adultes": "1-5 mg/h selon effet",
+            "preparation": "PSE - Dilution selon protocole",
+            "pediatrie": [
+              {
+                "minIndex": 0,
+                "maxIndex": 999,
+                "ugPerKgPerH": 10,
+                "ugPerKgPerHMax": 40,
+                "note": "10 à 40 µg/kg/h en IVSE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "contreIndications": "Insuffisance respiratoire aiguë, iléus paralytique",
+    "surdosage": "Dépression respiratoire - Naloxone (Narcan)",
+    "aSavoir": "Antagoniste: Naloxone 0.4 mg IV, répéter si besoin"
   },
   {
     "nom": "Naloxone",
@@ -635,30 +316,34 @@
         "posologie": [
           {
             "voie": "IV, IM, SC",
-            "adultes": "0.4 mg, répéter toutes les 2-3 min si besoin",
-            "preparation": "Bolus IV ou IM",
+            "adultes": "0.4 mg IV/IM/SC, répéter toutes les 2-3 min si besoin",
+            "preparation": "Bolus IV ou IM - Titrer pour éviter sevrage brutal",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "10 à 40 µg/kg (0.01-0.04 mg/kg), max 2 mg"
+                "mgPerKg": 0.01,
+                "maxMg": 2,
+                "note": "10 µg/kg (0.01 mg/kg), max 2 mg - Répéter si besoin"
               }
             ]
           }
         ]
       },
       {
-        "label": "Relais - Perfusion continue",
+        "label": "Perfusion continue (si récidive)",
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "À définir",
-            "preparation": "Perfusion selon protocole",
+            "adultes": "Selon effet (2/3 dose initiale efficace par heure)",
+            "preparation": "PSE - Surveillance rapprochée",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "10 à 160 µg/kg/h en IVSE"
+                "ugPerKgPerH": 10,
+                "ugPerKgPerHMax": 160,
+                "note": "10 à 160 µg/kg/h en IVSE selon effet"
               }
             ]
           }
@@ -666,62 +351,34 @@
       }
     ],
     "contreIndications": "Aucune en urgence",
-    "surdosage": "Syndrome de sevrage brutal",
-    "aSavoir": "Demi-vie courte, surveillance prolongée nécessaire"
+    "surdosage": "Syndrome de sevrage brutal aux opiacés",
+    "aSavoir": "Demi-vie courte (30-60 min) - Surveillance prolongée nécessaire"
   },
   {
-    "nom": "Noradrénaline",
-    "nomCommercial": "Levophed",
-    "galenique": "Ampoule 8 mg/4 mL",
+    "nom": "Insuline rapide",
+    "nomCommercial": "Actrapid, Umuline Rapide",
+    "galenique": "Flacon 100 UI/mL",
     "indications": [
       {
-        "label": "Choc / Vasopresseur",
+        "label": "Acidocétose diabétique",
         "posologie": [
           {
             "voie": "IVSE",
-            "adultes": "À définir",
-            "preparation": "IVSE - Voie veineuse centrale préférable",
+            "adultes": "0.1 UI/kg/h après réhydratation initiale",
+            "preparation": "PSE - Protocole acidocétose (50 UI dans 50 mL NaCl = 1 UI/mL)",
             "pediatrie": [
               {
                 "minIndex": 0,
                 "maxIndex": 999,
-                "note": "0.1 à 2 µg/kg/min en IVSE"
+                "note": "0.05-0.1 UI/kg/h en IVSE après réhydratation - Glycémies horaires"
               }
             ]
           }
         ]
       }
     ],
-    "contreIndications": "Aucune en choc",
-    "surdosage": "Ischémie distale, nécrose si extravasation",
-    "aSavoir": "Surveillance PA, nécrose cutanée si extravasation"
-  },
-  {
-    "nom": "Phénotoïne",
-    "nomCommercial": "Dilantin, Dihydan",
-    "galenique": "Ampoule 250 mg/5 mL",
-    "indications": [
-      {
-        "label": "Convulsions / État de mal",
-        "posologie": [
-          {
-            "voie": "IV",
-            "adultes": "À définir",
-            "preparation": "Perfusion lente sur 30 min minimum",
-            "pediatrie": [
-              {
-                "minIndex": 0,
-                "maxIndex": 999,
-                "mgPerKg": 20,
-                "note": "20 mg/kg en dose de charge (max 50 mg/min)"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "contreIndications": "Bloc AV, bradycardie sévère",
-    "surdosage": "Troubles du rythme, hypotension, ataxie",
-    "aSavoir": "Perfusion lente impérative, risque syndrome main pourpre"
+    "contreIndications": "Hypoglycémie",
+    "surdosage": "Hypoglycémie sévère - Resucrage IV immédiat",
+    "aSavoir": "Surveillance glycémique rapprochée - Objectif: baisse glycémie 3-5 mmol/L/h"
   }
 ]
